@@ -1,4 +1,4 @@
-# Edurust
+# EduRust
 
 Interactive computer science lessons. The first course fixture is a short Rust fundamentals slice. The web app is a client of the API; grading and accounts live in the Rust service.
 
