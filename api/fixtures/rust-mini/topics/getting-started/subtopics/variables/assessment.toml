@@ -1,0 +1,4 @@
+id = "variables-final"
+scope = "subtopic"
+task_ids = ["choose-let", "choose-mut", "binding-name"]
+pass_percent = 80

@@ -1,0 +1,11 @@
+correct_choice_ids = ["immutable", "name"]
+
+[feedback.correct]
+en = "FIXTURE_GRADING_ONLY Immutability and the name both follow from `let`."
+ru = "FIXTURE_GRADING_ONLY Неизменяемость и имя следуют из `let`."
+uk = "FIXTURE_GRADING_ONLY Незмінність і ім'я випливають із `let`."
+
+[feedback.incorrect]
+en = "FIXTURE_GRADING_ONLY Keep the default immutability and the name `count`."
+ru = "FIXTURE_GRADING_ONLY Оставьте неизменяемость по умолчанию и имя `count`."
+uk = "FIXTURE_GRADING_ONLY Залиште незмінність за замовчуванням і ім'я `count`."

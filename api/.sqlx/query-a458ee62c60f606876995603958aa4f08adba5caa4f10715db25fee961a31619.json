@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                                UPDATE question_mastery\n                                SET state = 'needs_review', updated_at = now()\n                                WHERE task_id = $1\n                                ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "a458ee62c60f606876995603958aa4f08adba5caa4f10715db25fee961a31619"
+}

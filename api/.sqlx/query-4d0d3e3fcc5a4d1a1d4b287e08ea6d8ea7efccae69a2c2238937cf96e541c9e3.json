@@ -1,0 +1,29 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT manifest_hash\n        FROM content_releases\n        WHERE course_id = $1 AND revision = $2\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "manifest_hash",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "content_releases",
+            "name": "manifest_hash"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Int4"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "4d0d3e3fcc5a4d1a1d4b287e08ea6d8ea7efccae69a2c2238937cf96e541c9e3"
+}

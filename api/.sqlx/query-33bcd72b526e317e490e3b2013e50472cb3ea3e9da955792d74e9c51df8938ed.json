@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM subtopic_localizations WHERE subtopic_id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "33bcd72b526e317e490e3b2013e50472cb3ea3e9da955792d74e9c51df8938ed"
+}

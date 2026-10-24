@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                INSERT INTO subtopics (id, topic_id, position, retired_at)\n                VALUES ($1, $2, $3, NULL)\n                ON CONFLICT (id) DO UPDATE\n                SET topic_id = EXCLUDED.topic_id,\n                    position = EXCLUDED.position,\n                    retired_at = NULL\n                ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "c44b5ef2d699ef710a31bc54f00c8681a7da498c0ef52377ecf016d72c465228"
+}

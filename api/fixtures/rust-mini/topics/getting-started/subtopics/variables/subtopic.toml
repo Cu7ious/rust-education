@@ -1,0 +1,4 @@
+id = "variables"
+title = { en = "Variables", ru = "Переменные", uk = "Змінні" }
+description = { en = "Bindings created with let.", ru = "Связывания, созданные через let.", uk = "Зв'язування, створені через let." }
+lessons = ["bindings"]

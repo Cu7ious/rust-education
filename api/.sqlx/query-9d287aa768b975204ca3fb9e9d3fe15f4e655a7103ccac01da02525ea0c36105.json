@@ -1,0 +1,97 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO task_attempts (\n                id, user_id, task_id, release_id, idempotency_key, submitted_answer,\n                correct, feedback, correct_choice_ids, context, context_id\n            )\n            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'lesson', $10)\n            ON CONFLICT (user_id, idempotency_key) DO NOTHING\n            RETURNING id, correct, feedback, correct_choice_ids, submitted_answer, created_at\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "correct",
+        "type_info": "Bool",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "correct"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "feedback",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "feedback"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "correct_choice_ids",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "correct_choice_ids"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "submitted_answer",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "submitted_answer"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "created_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "task_attempts",
+            "name": "created_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid",
+        "Text",
+        "Uuid",
+        "Uuid",
+        "Jsonb",
+        "Bool",
+        "Jsonb",
+        "Jsonb",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "9d287aa768b975204ca3fb9e9d3fe15f4e655a7103ccac01da02525ea0c36105"
+}

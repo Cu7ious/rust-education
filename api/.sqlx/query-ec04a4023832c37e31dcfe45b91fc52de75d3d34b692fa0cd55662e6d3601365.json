@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO lesson_progress (user_id, lesson_id, status, completed_at)\n        VALUES ($1, $2, 'in_progress', NULL)\n        ON CONFLICT (user_id, lesson_id) DO UPDATE\n        SET status = CASE\n                WHEN lesson_progress.completed_at IS NULL THEN 'in_progress'\n                ELSE lesson_progress.status\n            END,\n            updated_at = now()\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "ec04a4023832c37e31dcfe45b91fc52de75d3d34b692fa0cd55662e6d3601365"
+}

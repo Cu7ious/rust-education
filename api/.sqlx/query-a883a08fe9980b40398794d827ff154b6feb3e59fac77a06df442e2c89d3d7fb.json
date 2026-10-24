@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE lessons\n        SET retired_at = now()\n        WHERE retired_at IS NULL AND NOT (id = ANY($2))\n          AND subtopic_id IN (\n            SELECT s.id FROM subtopics s\n            JOIN topics t ON t.id = s.topic_id\n            WHERE t.course_id = $1\n          )\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "TextArray"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "a883a08fe9980b40398794d827ff154b6feb3e59fac77a06df442e2c89d3d7fb"
+}

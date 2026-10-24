@@ -1,0 +1,53 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT les.id AS lesson_id, p.status, p.completed_at\n        FROM lessons les\n        JOIN subtopics s ON s.id = les.subtopic_id\n        JOIN topics t ON t.id = s.topic_id\n        LEFT JOIN lesson_progress p ON p.lesson_id = les.id AND p.user_id = $1\n        WHERE les.retired_at IS NULL\n          AND ($2::text IS NULL OR t.course_id = $2)\n        ORDER BY t.position, s.position, les.position\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "lesson_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lessons",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "status",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lesson_progress",
+            "name": "status"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "completed_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "lesson_progress",
+            "name": "completed_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true
+    ]
+  },
+  "hash": "95ca7faf6352847fec754ccdd3879a527dc3c43a4dd3a564d63371fe2a3c9900"
+}

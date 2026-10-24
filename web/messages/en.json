@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Edurust",
+    "description": "Interactive computer science lessons."
+  },
+  "nav": {
+    "courses": "Courses",
+    "login": "Log in",
+    "register": "Create account",
+    "logout": "Log out",
+    "loggedOut": "you've been logged out.",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Learn computer science",
+    "body": "Read a short explanation, answer a task, and see the result immediately.",
+    "start": "Browse courses"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "registerTitle": "Create an account",
+    "loginTitle": "Log in",
+    "submitRegister": "Create account",
+    "submitLogin": "Log in",
+    "haveAccount": "Already have an account?",
+    "needAccount": "Need an account?",
+    "registered": "Account created. Log in to continue.",
+    "invalid": "Email or password is incorrect.",
+    "taken": "That email is already registered.",
+    "unverified": "Confirm your email before logging in.",
+    "validation": "Use a valid email and a password of 8 to 200 characters.",
+    "generic": "Something went wrong. Try again."
+  },
+  "course": {
+    "empty": "No courses are published yet.",
+    "status": {
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "completed": "Completed"
+    }
+  },
+  "lesson": {
+    "submit": "Check",
+    "correct": "Correct",
+    "incorrect": "Not quite",
+    "completed": "Lesson completed",
+    "back": "Back to the course",
+    "unsupported": "This task type is not available yet.",
+    "answer": "Your answer",
+    "saved": "Your last answer is saved."
+  }
+}

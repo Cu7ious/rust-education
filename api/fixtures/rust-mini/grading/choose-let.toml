@@ -1,0 +1,11 @@
+correct_choice_ids = ["let"]
+
+[feedback.correct]
+en = "FIXTURE_GRADING_ONLY `let` introduces a binding."
+ru = "FIXTURE_GRADING_ONLY `let` создаёт связывание."
+uk = "FIXTURE_GRADING_ONLY `let` створює зв'язування."
+
+[feedback.incorrect]
+en = "FIXTURE_GRADING_ONLY The binding keyword is `let`."
+ru = "FIXTURE_GRADING_ONLY Ключевое слово связывания — `let`."
+uk = "FIXTURE_GRADING_ONLY Ключове слово зв'язування — `let`."

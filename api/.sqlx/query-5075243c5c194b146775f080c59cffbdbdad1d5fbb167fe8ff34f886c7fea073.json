@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE tasks\n        SET retired_at = now()\n        WHERE course_id = $1 AND retired_at IS NULL AND NOT (id = ANY($2))\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "TextArray"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "5075243c5c194b146775f080c59cffbdbdad1d5fbb167fe8ff34f886c7fea073"
+}

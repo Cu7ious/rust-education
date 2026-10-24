@@ -1,0 +1,6 @@
+id = "binding-name"
+kind = "task"
+task_id = "binding-name"
+task_type = "short_answer"
+purpose = "both"
+prompt = { en = "In `let count = 3`, what is the binding name?", ru = "В `let count = 3` как называется связывание?", uk = "У `let count = 3` як називається зв'язування?" }

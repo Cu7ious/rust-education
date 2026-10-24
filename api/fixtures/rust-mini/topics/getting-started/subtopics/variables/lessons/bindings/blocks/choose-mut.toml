@@ -1,0 +1,22 @@
+id = "choose-mut"
+kind = "task"
+task_id = "choose-mut"
+task_type = "multiple_choice"
+purpose = "both"
+prompt = { en = "Which statements about `let count = 3` are true?", ru = "Какие утверждения о `let count = 3` верны?", uk = "Які твердження про `let count = 3` правильні?" }
+
+[[choices]]
+id = "immutable"
+text = { en = "The binding is immutable by default.", ru = "Связывание по умолчанию неизменяемо.", uk = "Зв'язування за замовчуванням незмінне." }
+
+[[choices]]
+id = "reassignment"
+text = { en = "The name can be assigned again without mut.", ru = "Имя можно присвоить снова без mut.", uk = "Ім'я можна присвоїти знову без mut." }
+
+[[choices]]
+id = "name"
+text = { en = "The binding name is count.", ru = "Имя связывания — count.", uk = "Ім'я зв'язування — count." }
+
+[[choices]]
+id = "optional"
+text = { en = "The let keyword is optional.", ru = "Ключевое слово let необязательно.", uk = "Ключове слово let необов'язкове." }

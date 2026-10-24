@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO assessments (id, scope, scope_id, course_id, pass_percent, retired_at)\n        VALUES ($1, $2, $3, $4, $5, NULL)\n        ON CONFLICT (id) DO UPDATE\n        SET scope = EXCLUDED.scope,\n            scope_id = EXCLUDED.scope_id,\n            course_id = EXCLUDED.course_id,\n            pass_percent = EXCLUDED.pass_percent,\n            retired_at = NULL\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "a9d95d064741a3f8be942ddd4ecdf834a6fff3010dac9167de704a2be0ae305e"
+}

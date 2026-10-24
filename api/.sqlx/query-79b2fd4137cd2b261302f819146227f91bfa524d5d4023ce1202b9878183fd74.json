@@ -1,0 +1,64 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT t.id, t.block_id, t.task_type, t.public_payload\n        FROM tasks t\n        JOIN blocks b ON b.id = t.block_id\n        WHERE b.lesson_id = $1 AND t.retired_at IS NULL AND b.retired_at IS NULL\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "block_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "block_id"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "task_type",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "task_type"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "public_payload",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "public_payload"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "79b2fd4137cd2b261302f819146227f91bfa524d5d4023ce1202b9878183fd74"
+}

@@ -1,0 +1,20 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO blocks (\n            id, lesson_id, position, kind, text_markdown, video_url, video_title, retired_at\n        )\n        VALUES ($1, $2, $3, $4, $5, $6, $7, NULL)\n        ON CONFLICT (id) DO UPDATE\n        SET lesson_id = EXCLUDED.lesson_id,\n            position = EXCLUDED.position,\n            kind = EXCLUDED.kind,\n            text_markdown = EXCLUDED.text_markdown,\n            video_url = EXCLUDED.video_url,\n            video_title = EXCLUDED.video_title,\n            retired_at = NULL\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Int4",
+        "Text",
+        "Jsonb",
+        "Text",
+        "Jsonb"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d8931f82ec47a3e6338858970ba0158285000b9bd0e293ac07c737a932917bdd"
+}

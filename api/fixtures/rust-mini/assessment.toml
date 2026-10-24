@@ -1,0 +1,4 @@
+id = "rust-mini-final"
+scope = "course"
+task_ids = ["choose-let", "choose-mut", "binding-name"]
+pass_percent = 80

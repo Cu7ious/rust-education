@@ -1,0 +1,100 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT t.id, t.task_type, t.retired_at, g.spec, b.lesson_id, c.current_release_id, c.default_locale\n        FROM tasks t\n        JOIN task_grading g ON g.task_id = t.id\n        JOIN blocks b ON b.id = t.block_id\n        JOIN lessons l ON l.id = b.lesson_id\n        JOIN subtopics s ON s.id = l.subtopic_id\n        JOIN topics top ON top.id = s.topic_id\n        JOIN courses c ON c.id = top.course_id\n        WHERE t.id = $1\n          AND t.retired_at IS NULL\n          AND b.retired_at IS NULL\n          AND l.retired_at IS NULL\n          AND s.retired_at IS NULL\n          AND top.retired_at IS NULL\n          AND c.retired_at IS NULL\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "task_type",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "task_type"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "retired_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "tasks",
+            "name": "retired_at"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "spec",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "task_grading",
+            "name": "spec"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "lesson_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "blocks",
+            "name": "lesson_id"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "current_release_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "courses",
+            "name": "current_release_id"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "default_locale",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "courses",
+            "name": "default_locale"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "ec4f42eb71de861ec855caf01eba9163c7e727b792066b8db667b487d17686b3"
+}

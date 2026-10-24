@@ -1,0 +1,20 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                            INSERT INTO tasks (\n                                id, block_id, course_id, task_type, purpose,\n                                grading_hash, public_payload, retired_at\n                            )\n                            VALUES ($1, $2, $3, $4, $5, $6, $7, NULL)\n                            ON CONFLICT (id) DO UPDATE\n                            SET block_id = EXCLUDED.block_id,\n                                course_id = EXCLUDED.course_id,\n                                task_type = EXCLUDED.task_type,\n                                purpose = EXCLUDED.purpose,\n                                grading_hash = EXCLUDED.grading_hash,\n                                public_payload = EXCLUDED.public_payload,\n                                retired_at = NULL\n                            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Jsonb"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "38f5236394cb873e1efbcf41eb135c3bb9d44573745f1f239fcf5cb639fd1b9d"
+}

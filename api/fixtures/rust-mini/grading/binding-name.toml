@@ -1,0 +1,12 @@
+normalization = "trim_casefold"
+accepted_answers = ["count"]
+
+[feedback.correct]
+en = "FIXTURE_GRADING_ONLY The binding name is count."
+ru = "FIXTURE_GRADING_ONLY Имя связывания — count."
+uk = "FIXTURE_GRADING_ONLY Ім'я зв'язування — count."
+
+[feedback.incorrect]
+en = "FIXTURE_GRADING_ONLY Read the name between let and the equals sign."
+ru = "FIXTURE_GRADING_ONLY Прочитайте имя между let и знаком равенства."
+uk = "FIXTURE_GRADING_ONLY Прочитайте ім'я між let і знаком рівності."

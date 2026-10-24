@@ -1,0 +1,4 @@
+id = "bindings"
+title = { en = "What is a binding", ru = "Что такое связывание", uk = "Що таке зв'язування" }
+description = { en = "How let gives a name to a value.", ru = "Как let даёт имя значению.", uk = "Як let дає ім'я значенню." }
+blocks = ["intro", "choose-let", "between", "choose-mut", "binding-name"]

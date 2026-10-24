@@ -1,0 +1,18 @@
+id = "choose-let"
+kind = "task"
+task_id = "choose-let"
+task_type = "single_choice"
+purpose = "both"
+prompt = { en = "Which keyword introduces a binding?", ru = "Какое ключевое слово создаёт связывание?", uk = "Яке ключове слово створює зв'язування?" }
+
+[[choices]]
+id = "var"
+text = { en = "var", ru = "var", uk = "var" }
+
+[[choices]]
+id = "let"
+text = { en = "let", ru = "let", uk = "let" }
+
+[[choices]]
+id = "def"
+text = { en = "def", ru = "def", uk = "def" }

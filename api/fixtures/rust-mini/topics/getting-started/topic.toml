@@ -1,0 +1,4 @@
+id = "getting-started"
+title = { en = "Getting started", ru = "Начало работы", uk = "Початок роботи" }
+description = { en = "The first names a program gives to values.", ru = "Первые имена, которые программа даёт значениям.", uk = "Перші імена, які програма дає значенням." }
+subtopics = ["variables"]

@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.local
+target/
+web/node_modules/
+web/.next/
+web/out/
+*.log

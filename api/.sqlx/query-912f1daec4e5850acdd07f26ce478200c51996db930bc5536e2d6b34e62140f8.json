@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE topics\n        SET position = -position\n        WHERE course_id = $1 AND retired_at IS NULL AND position > 0\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "912f1daec4e5850acdd07f26ce478200c51996db930bc5536e2d6b34e62140f8"
+}

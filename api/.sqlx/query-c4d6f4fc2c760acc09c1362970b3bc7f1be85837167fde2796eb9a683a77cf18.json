@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            UPDATE lesson_progress\n            SET status = 'completed',\n                completed_at = COALESCE(completed_at, now()),\n                updated_at = now()\n            WHERE user_id = $1 AND lesson_id = $2 AND completed_at IS NULL\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "c4d6f4fc2c760acc09c1362970b3bc7f1be85837167fde2796eb9a683a77cf18"
+}

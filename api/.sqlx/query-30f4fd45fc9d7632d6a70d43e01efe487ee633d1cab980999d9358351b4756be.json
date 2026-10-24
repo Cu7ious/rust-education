@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE blocks\n        SET position = -position\n        WHERE retired_at IS NULL AND position > 0\n          AND lesson_id IN (\n            SELECT l.id FROM lessons l\n            JOIN subtopics s ON s.id = l.subtopic_id\n            JOIN topics t ON t.id = s.topic_id\n            WHERE t.course_id = $1\n          )\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "30f4fd45fc9d7632d6a70d43e01efe487ee633d1cab980999d9358351b4756be"
+}

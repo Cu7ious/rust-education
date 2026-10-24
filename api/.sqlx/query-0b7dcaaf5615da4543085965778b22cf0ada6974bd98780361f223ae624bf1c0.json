@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                            INSERT INTO task_grading (task_id, grading_hash, spec)\n                            VALUES ($1, $2, $3)\n                            ON CONFLICT (task_id) DO UPDATE\n                            SET grading_hash = EXCLUDED.grading_hash,\n                                spec = EXCLUDED.spec\n                            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Jsonb"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "0b7dcaaf5615da4543085965778b22cf0ada6974bd98780361f223ae624bf1c0"
+}

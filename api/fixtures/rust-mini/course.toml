@@ -1,0 +1,14 @@
+id = "rust-fundamentals-mini"
+revision = 2
+default_locale = "en"
+topics = ["getting-started"]
+
+[title]
+en = "Rust fundamentals"
+ru = "Основы Rust"
+uk = "Основи Rust"
+
+[description]
+en = "A short fixture about bindings in Rust."
+ru = "Короткая фикстура про связывание в Rust."
+uk = "Коротка фікстура про зв'язування в Rust."

@@ -1,0 +1,76 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT les.id, s.id AS subtopic_id, t.id AS topic_id, c.id AS course_id, c.default_locale\n        FROM lessons les\n        JOIN subtopics s ON s.id = les.subtopic_id\n        JOIN topics t ON t.id = s.topic_id\n        JOIN courses c ON c.id = t.course_id\n        WHERE les.id = $1\n          AND les.retired_at IS NULL\n          AND s.retired_at IS NULL\n          AND t.retired_at IS NULL\n          AND c.retired_at IS NULL\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lessons",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "subtopic_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "subtopics",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "topic_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "topics",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "course_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "courses",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "default_locale",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "courses",
+            "name": "default_locale"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "afcd4640b5c28eaef7c68cae8e8254bab3d296b8d0a742885297803a01533cf0"
+}

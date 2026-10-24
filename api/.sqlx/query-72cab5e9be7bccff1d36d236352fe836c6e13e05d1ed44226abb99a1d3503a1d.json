@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM lesson_localizations WHERE lesson_id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "72cab5e9be7bccff1d36d236352fe836c6e13e05d1ed44226abb99a1d3503a1d"
+}

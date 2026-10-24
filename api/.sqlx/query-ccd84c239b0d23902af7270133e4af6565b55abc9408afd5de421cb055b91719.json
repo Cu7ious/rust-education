@@ -1,0 +1,96 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT les.id, les.subtopic_id, les.position, l.locale, l.title, l.description,\n               COALESCE(p.status, 'not_started') AS status\n        FROM lessons les\n        JOIN subtopics s ON s.id = les.subtopic_id\n        JOIN topics t ON t.id = s.topic_id\n        JOIN lesson_localizations l ON l.lesson_id = les.id\n        LEFT JOIN lesson_progress p ON p.lesson_id = les.id AND p.user_id = $2\n        WHERE t.course_id = $1 AND les.retired_at IS NULL AND s.retired_at IS NULL AND t.retired_at IS NULL\n        ORDER BY les.position, l.locale\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lessons",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "subtopic_id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lessons",
+            "name": "subtopic_id"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "position",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "lessons",
+            "name": "position"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "locale",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lesson_localizations",
+            "name": "locale"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "title",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lesson_localizations",
+            "name": "title"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "description",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "lesson_localizations",
+            "name": "description"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "status",
+        "type_info": "Text",
+        "origin": "Expression"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      null
+    ]
+  },
+  "hash": "ccd84c239b0d23902af7270133e4af6565b55abc9408afd5de421cb055b91719"
+}

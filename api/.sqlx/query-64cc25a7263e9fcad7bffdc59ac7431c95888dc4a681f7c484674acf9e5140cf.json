@@ -1,0 +1,24 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT NOT EXISTS (\n            SELECT 1\n            FROM blocks b\n            JOIN tasks t ON t.block_id = b.id\n            WHERE b.lesson_id = $1\n              AND b.kind = 'task'\n              AND b.retired_at IS NULL\n              AND t.retired_at IS NULL\n              AND NOT EXISTS (\n                  SELECT 1 FROM task_attempts a\n                  WHERE a.user_id = $2 AND a.task_id = t.id AND a.correct\n              )\n        )\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "?column?",
+        "type_info": "Bool",
+        "origin": "Expression"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      null
+    ]
+  },
+  "hash": "64cc25a7263e9fcad7bffdc59ac7431c95888dc4a681f7c484674acf9e5140cf"
+}
